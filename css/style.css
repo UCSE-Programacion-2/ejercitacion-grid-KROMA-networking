@@ -1,28 +1,192 @@
+/* --- reset de todo css con respecto al instafront --- */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #f3f3f3;
-  color: #1f1f1f;
+    background-color: #fafafa;
+    font-family: 'Roboto', sans-serif; /* Fidelidad del figma */
+    color: rgba(0, 0, 0, 1);
 }
 
-.container {
-  width: min(100%, 960px);
-  margin: 0 auto;
-  padding: 1rem;
+/* --- Header --- */
+.logo-text {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 1);
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+/* --- VISTA MOBILE --- */
+.page-container {
+    display: grid; /* REQUISITO */
+    grid-template-columns: 1fr; /* Una columna en móvil */
+    gap: 15px;
+    padding: 10px;
 }
 
-/* TODO alumno:
-   Aplicar Grid en .exercice y .excercice-incomplete
-   con enfoque Mobile First + media queries.
-*/
+.sidebar {
+    display: none; /* Oculto en móvil */
+}
+
+/* --- VISTA DESKTOP (Grid 2 columnas) --- */
+@media (min-width: 768px) {
+    .page-container {
+        grid-template-columns: 600px 300px; /* Tamaño del post según Figma */
+        justify-content: center;
+        max-width: 935px;
+        margin: 30px auto;
+        gap: 30px;
+    }
+    .sidebar {
+        display: block;
+    }
+}
+.header-container {
+    max-width: 935px;
+    margin: 0 auto;
+    display: flex; /* Activa el alineamiento horizontal */
+    justify-content: space-between; /* Empuja el logo a la izquierda y el avatar a la derecha */
+    align-items: center; /* Centra todo verticalmente */
+    padding: 10px 20px;
+}
+
+.search-input {
+    background-color: #efefef;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 8px;
+    text-align: center; /* Centra el texto "Buscador..." */
+    width: 250px;
+}
+/* --- Estilos de Iconos (Specs de tus capturas) --- */
+.post-actions i {
+    font-size: 24px; /* Ancho según Figma */
+    color: rgba(38, 38, 38, 1); /* Color exacto de tus capturas */
+    margin-right: 15px;
+    cursor: pointer;
+}
+/* --- VISTA MOBILE (Basado en tu captura móvil) --- */
+@media (max-width: 767px) {
+    .header-container {
+        padding: 10px;
+    }
+    
+    .search-input {
+        display: none; /* En móvil Instagram suele ocultar el buscador del header */
+    }
+
+    .logo-text {
+        font-size: 22px;
+    }
+
+    .stories-bar {
+        border-radius: 0; /* Ocupa todo el ancho en móvil */
+        border-left: none;
+        border-right: none;
+    }
+
+    .post-card {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+}
+
+/* --- Footer Ajustado (Más grande) --- */
+.main-footer {
+    background-color: #262626; /* Color oscuro tipo Instagram */
+    padding: 30px 0; /* Más grande como pediste */
+    width: 100%;
+    margin-top: 50px;
+}
+
+.main-footer p {
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase; /* Para que coincida con "NOMBRE PROGRAMADOR/A" */
+    letter-spacing: 1px;
+}
+
+/* --- Ajuste del Post Header --- */
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+}
+
+.user-id {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* --- Estilos de las Cards --- */
+.post-card {
+    background: #fff;
+    border: 0.4px solid rgba(34, 34, 34, 0.5); /* Según captura */
+    border-radius: 5px; /* Radio de 5px según Figma */
+    margin-top: 15px;
+}
+/* --- Control de Imágenes (Para que no exploten) --- */
+.nav-avatar, .post-avatar, .sidebar-avatar, .story img, .suggest-item img {
+    width: 50px; /* Tamaño base para avatares */
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* Evita que se aplasten */
+}
+
+/* El post principal debe ser grande pero controlado */
+.post-main-img {
+    width: 100%;
+    max-width: 600px; /* El ancho del Figma */
+    height: auto;
+    display: block;
+}
+.stories-bar {
+    background: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex; /* ¡ESTO hace que se pongan uno al lado del otro! */
+    gap: 15px; /* Espacio entre burbujas */
+    overflow-x: auto; /* Permite scroll horizontal si hay muchas */
+}
+/* Tamaño específico para las historias (Check de Figma) */
+.story img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e1306c; /* El círculo naranja/rosa de Insta */
+    padding: 2px;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #1a1a1a; /* Fondo oscuro para que resalte el blanco */
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.main-footer p {
+    color: rgba(255, 255, 255, 1); /* Blanco según captura */
+    font-size: 10px; /* Tamaño exacto de captura */
+    font-weight: 400;
+}
+
+/* Utilidades Sidebar */
+.btn-link {
+    background: none;
+    border: none;
+    color: #0095f6;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 12px;
+}
