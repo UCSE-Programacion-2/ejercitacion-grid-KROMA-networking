@@ -1,57 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Ejercicio Grid</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaFront — Sergio Sanchez</title>
+    <!-- FontAwesome para los iconos de reaccionar/compartir -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <div class="container">
-      <div class="logo">
-        <img
-          src="img/logo-DM.png"
-          alt="Logo DM"
-        />
-      </div>
-      <h3>🤯Rompecabezas!</h3>
-      <div class="exercice">
-        <!--Lado Completo-->
-        <div class="exercice-complete">
-          <img
-            src="img/final.jpg"
-            alt="rompecabezas completo"
-          />
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <h1 class="logo-text">InstaFront</h1>
+            <input type="text" class="search-input" placeholder="Buscador...">
+            <img src="img/avatar-abril.jpg" alt="Perfil" class="nav-avatar">
         </div>
-        <!--Lado Incompleto-->
-        <div class="excercice-incomplete">
-          <div class="grid-one">
-            <img
-              src="img/1.jpg"
-              alt="image 1"
-            />
-          </div>
-          <div class="grid-two">
-            <img
-              src="img/2.jpg"
-              alt="image 2"
-            />
-          </div>
-          <div class="grid-three">
-            <img
-              src="img/3.jpg"
-              alt="image 3"
-            />
-          </div>
-          <div class="grid-four">
-            <img
-              src="img/4.jpg"
-              alt="image 4"
-            />
-          </div>
+    </header>
+
+    <main class="page-container">
+        <div class="content-left">
+            <!-- Historias -->
+            <section class="stories-bar">
+                <div class="story"><img src="img/avatar-abril.jpg" alt=""></div>
+                <div class="story"><img src="img/avatar-abril.jpg" alt=""></div>
+                <div class="story"><img src="img/avatar-abril.jpg" alt=""></div>
+                <div class="story"><img src="img/avatar-abril.jpg" alt=""></div>
+            </section>
+
+            <!-- Card del Post -->
+            <article class="post-card">
+                <div class="post-header">
+                    <div class="user-id">
+                        <img src="img/avatar-abril.jpg" alt="" class="post-avatar">
+                        <span class="post-username">Abril González</span>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+                <img src="img/avatar-abril.jpg" alt="Post" class="post-main-img">
+                <div class="post-content">
+                    <div class="post-actions">
+                        <!-- Iconos con las specs de tus capturas -->
+                        <i class="far fa-heart"></i>
+                        <i class="far fa-comment"></i>
+                        <i class="far fa-paper-plane"></i>
+                        <i class="far fa-smile"></i>
+                    </div>
+                    <p class="likes">Les gusta a <strong>luliplingless</strong> y otras personas</p>
+                    <p class="comments-count">Ver los 3,672 comentarios</p>
+                    <p class="caption"><strong>Gabriela Munich</strong> Hola! que placer verte en frontend!!</p>
+                    <p class="caption"><strong>Jonathan Gonzalez</strong> Te estabamos esperando!! Vamooh!</p>
+                </div>
+            </article>
         </div>
-      </div>
-    </div>
-  </body>
+
+        <aside class="sidebar">
+            <!-- ... (se mantiene igual que antes) ... -->
+        </aside>
+    </main>
+
+    <footer class="main-footer">
+        <p>Todos los derechos reservados a SERGIO SANCHEZ</p>
+    </footer>
+</body>
 </html>
